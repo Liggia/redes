@@ -1,0 +1,70 @@
+Estudante: Liggia Santos Lima
+Turma: TI441
+
+Topologia estrela
+1.Sub-rede: 172.16.10.0/24
+Máscara: 255.255.255.0
+	1ª subrede: h1-h4
+	2ª subrede: h2-h5
+	3ª subrede: h3-h6
+
+/26 → 255.255.255.192
+variante: 64
+Sub-redes: 4
+subrede h1-h4:  172.16.10.10-172.16.10.11
+subrede h2-h5:  172.16.10.74-172.16.10.75
+subrede h3-h6:  172.16.10.138-172.16.10.139 
+
+Código python:
+
+#!/usr/bin/python
+This example creatles a simple network topology with 1 AP and 6 stations’
+from mininet.net import Mininet
+from mininet.node import Controller, OVSKernelAP
+from mininet.cli import CLI
+from mininet.log import setLogLevel
+from mininet.link import TCLink
+
+def topology():
+	“Create a network.”
+	net = Mininet(controller=Controller, link=TCLink, accessPoint=OVSKernelAP)
+
+print “*** Creating nodes”
+h1 = net.addHost(‘h1’, ip=’172.16.10.10/26’)
+h2= net.addHost(‘h2’, ip=’172.16.10.74/26’)
+h3= net.addHost(‘h3’, ip=’172.16.10.138/26’)
+h4 = net.addHost(‘h4’, ip=’172.16.10.11/26’)
+h5 = net.addHost(‘h5’, ip=’172.16.10.75/26’)
+h6 = net.addHost(‘h6’, ip=’172.16.10.139/26’)
+s1 = net.addSwitch(‘s1’)
+
+c0 = net.addController(‘c0’, controller=Controller, ip=’127.0.0.1’, port=6633)
+
+print “*** Configurinf wifi nodes”
+net.configureWifiNodes()
+
+print “*** Associating Stations”
+net.addLink(h1, s1)
+net.addLink(h2 s1)
+net.addLink(h3, s1)
+net.addLink(h4, s1)
+net.addLink(h5, s1)
+net.addLink(h6, s1)
+
+print “*** Starting network”
+net.build()
+c0.start()
+s1.start([c0])
+
+printi “*** Running CLI”
+CLI(net)
+
+print “*** Stopping network”
+net.stop()
+if__name__ == ‘__main__’:
+setLogLevel(‘info’)
+topology()
+
+
+11111111.11111111.11111111.11000000
+
