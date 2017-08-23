@@ -1,0 +1,110 @@
+Estudante: Liggia Santos Lima
+Turma: TI441.
+
+Codigo python:
+
+simplewifitopology.py.save.2                                                                    
+
+#!/usr/bin/python
+
+'This example creates a simple network topology with 1 AP and 2 stations'
+
+from mininet.net import Mininet
+from mininet.node import  Controller, OVSKernelAP
+from mininet.cli import CLI
+from mininet.log import setLogLevel
+from mininet.link import TCLink
+
+def topology():Ethernet  Endereço de HW 3c:4a:92:5f:51:bc
+    "Create a network."
+    net = Mininet(controller=Controller, link=TCLink, accessPoint=OVSKernelAP)
+
+    print "*** Creating nodes"
+    h1 = net.addHost('h1', ip='176.16.10.1/27')
+    h2 = net.addHost('h2', ip='176.16.10.24/27')
+    s1 = net.addSwitch('s1')
+
+    c0 = net.addController('c0', controller=Controller, ip='127.0.0.1', port=6633)
+
+    print "*** Configuring wifi nodes"
+    net.configureWifiNodes()
+
+    print "*** Associating Stations"
+    net.addLink(h1, s1)
+    net.addLink(h2, s1)
+
+    print "*** Starting network"
+    net.build()
+    c0.start()
+    s1.start([c0])
+
+    print "*** Running CLI"
+    CLI(net)
+
+    print "*** Stopping network"
+    net.stop()
+
+if __name__ == '__main__':
+    setLogLevel('info')
+    topology()
+
+O meu código era o abaixo, mas não funcionou, então usei o arquivo de Jessica.
+
+#!/usr/bin/python
+This example creatles a simple network topology with 1 AP and 2stations’
+from mininet.net import Mininet
+from mininet.node import Controller, OVSKernelAP
+from mininet.cli import CLI
+from mininet.log import setLogLevel
+from mininet.link import TCLink
+
+def topology():
+	“Create a network.”
+	net = Mininet(controller=Controller, link=TCLink, accessPoint=OVSKernelAP)
+
+	print “*** Creating nodes”
+	h1 = net.addHost(‘h1’, ip=’172.16.10.10/26’)
+	h2= net.addHost(‘h2’, ip=’172.16.10.74/26’)
+	
+	s1 = net.addSwitch(‘s1’)
+
+	c0 = net.addController(‘c0’, controller=Controller, ip=’127.0.0.1’, port=6633)
+
+	print “*** Configurinf wifi nodes”
+	net.configureWifiNodes()
+
+	print “*** Associating Stations”
+	net.addLink(h1, s1)
+	net.addLink(h2 s1)
+
+	print “*** Starting network”
+	net.build()
+	c0.start()
+	s1.start([c0])
+
+	printi “*** Running CLI”
+	CLI(net)
+
+	print “*** Stopping network”
+	net.stop()
+if__name__ == ‘__main__’:
+	setLogLevel(‘info’)
+	topology()
+
+
+Questão 1-
+O protocolo utilizado é o ICMP (Internet Control Message Protocol); a sequência até o ping traz a quantidade de arquivos enviador, recebidos e tempo de resposta; mensagens: "Reply" e "Request". 
+
+Questão 2-
+RCF é um documento técnico que estabelece um protocolo padrão para os fluxos de dado na Internet;
+nome:protocolo ICMP 1 e RFC 792, data: Setembro 1981.
+ 
+Questão 3-
+
+a) Nome: enp1s0    Link encap:Ethernet  Endereço de HW 1c:39:47:56:44:0a; 
+b) Identifica, mask: 255.255.248.0, número de subredes:32;
+c) Hosts por subrede: 8; 
+d) End. de rede: 10.17.15.42
+e) Bcast:10.17.15.255
+f) Gateway: 10.17.15.0
+
