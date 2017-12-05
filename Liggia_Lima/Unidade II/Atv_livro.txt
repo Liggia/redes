@@ -1,0 +1,30 @@
+	 	 	 	
+IFBA- Jequié
+Estudante- Liggia Santos Lima
+Turma- TI441
+
+Seção 8.1
+Questão 1-
+A confidencialidade tem por foco a garantia de que apenas o remetente e o destinatário terão acesso à mensagem. A segurança é feita a partir de uma criptografia onde apenas as pessoas que podem ter acesso conseguem decifrar. Já a integridade tem por objetivo garantir que os dados cheguem icorretos, que o destinatário receba a mensagem inteira. Obter confidencialidade sem integridade é possível, pois a partir do momento que a mensagem sofre um ataque que faça com que a mensagem não seja passada corretamente, quer dizer que sua criptografia foi corrompida, deixando de ser uma comunicação segura.
+
+Questão 2-
+I Um sistema de uma farmácia necessita buscar informações solicitadas por um usuário no servidor web. Se não ocorrer integridade nessa troca de mensagens, o sistema pode ficar inativo e o usuário perder uma venda. II Um usuário acessa um site bancário e o servidor DNS não realiza a conversão correta e o usuário acaba tendo sua operação cancelada no meio por falta de integridade na segurança. III Um computador deseja se conectar a um roteador, é preciso ter segurança de confialidade para que as trocas de mensagens durante o hanoshake sejam realizadas.
+
+Seção 8.3
+Questão 18-
+O ataque do meio acontece quando ao estabelecer uma conexão, o remetente não faz uma ligação direta com o destinatário, sem saber o remetente conecta-se com um “home do meio” que por sua vez conecta-se com o destinatário. As mensagens são enviadas primeiramente ao interceptador que por sua vez passa pro remetente ou destinatário, pegando todas as informações que estes trocam. Ao usar chaves simétricas o ataque pode acontecer, visto que o invasor precisa descobrir apenas uma chave de criptografia, invés de duas, como acontece nas chaves assimétricas. O ataque não é tão fácil por precisar de uma chave, mas não é impossível.
+
+Seção 8.4
+Questão 21-
+O nonce irá evitar que um invasor intercepte a comunicação, visto que para que a autenticação aconteça, em cada comunicação há um nonce diferente, uma senha, que é cripitografada tando no envio, quanto no recebimento. Assim, um invasor não saberá qual a senha visto que esta é aleatória e criptografada e não é única.
+
+Questões Dissertativas
+Questão 1-
+	 	 	 	
+I Um invasor ataca um modem ADSL trocando o IP de servidores DNS à partir de uma varredura de IP’s para descobrir um vulnerável. Ao descobrir a falha, trocam a senha do modem e o servidor DNS. II Um invasor pode contaminar seu computador com um vírus que ataca o servidor DNS e bloqueia alguns sites, como youtube, google, sites comuns e necessários para usuários básicos. III Outra forma de invasão é atacar um servidor DNS e fazer uma clonagem de sites, modificando o IP. Estes sites são geralmente sites bancários ou de lojas, ao clonar os atacantes recebem dados íntimos do usuário.
+
+Questão 3-
+O Ipsec não é totalmente seguro, ele apresenta falhas que possibilitam ataques. Um destes ataques é o de replay, onde o atacante reenvia um formulário que já havia sido preenchido no site original para que o usuário insira dados e reenvie para o atacante. Isso acontece por uma falha no IP no momento que o formulário está sendo enviado. Outro ataque é o de falha de verificação de repetição, onde o servidor não verifica a duplicação de pacotes criptografados, facilitando o ataque
+
+Questão 4-
+Botnet é uma rede composta por muitos computadores infectados por malwares para atender comandos criados pelo operador hacker. O hacker envia vírus aos computadores, infectando usuários comuns, esse vírus funciona como uma espécie de bot o qual é programado para comandar o computador a partir de solicitações do operador. Essa rede só tem crescido e muitos computadores estão sendo conectados. Os protocolos geralmente utilizados para os ataques são protocolos de padrão de rede, como o IRC e o HTTP, que não possuem um processo complexo de segurança de rede.
