@@ -1,0 +1,7 @@
+IFBA- Jequié
+Estudante- Liggia Santos Lima
+
+DNS- resumo de prática
+
+	Iniciamos a primeira aula da terceira unidade com uma atividade utilizando conceitos gerenciamento do DNS(Domain Name System). A atividade prática vinha com uma introdução sobre o que era e para que servia o DNS. Depois, pedia para que fosse criado um registro do site do Google na máquina e que clonasse algum site e que o colega abrisse o mesmo.
+	Iniciamos a prática instalando e configurando a zona e o dominio do site do bind9. Não houve sucesso utilizando o bind9, então configuramos os arquivos /etc/resolv.conf e /etc/hosts, inserindo o domínio do site, o localhost e o ip do colega para realizar a clonagem. Clonamos o site globo.com salvando o html do mesmo e movendo para o diretório /etc/ para que lá fossem feitas as modificações que quisesse. Após todos os processos, o site do colega foi clonado com sucesso e a prática foi finalizada.
